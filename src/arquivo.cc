@@ -1,4 +1,4 @@
- // ifstream fileMap(argv[1]);
+    // ifstream fileMap(argv[1]);
     // string lineMap;
     
     // ifstream fileCommand(argv[2]);
@@ -27,7 +27,7 @@
 
 
 
-      // char ch;
+    // char ch;
     // fstream fin("file", fstream::in);
     // fin >> noskipws;
     // while (fin >> noskipws >> ch) {
@@ -37,7 +37,7 @@
 
     // cout << linhas << endl;
     // cout << colunas << endl;
-    
+
     //Printa a matriz
     // int i, j;
     // for(i=0; i<linhas; i++) {
@@ -47,3 +47,14 @@
 	// 	printf("\n");
 	// }
     // printf("\n");
+
+    //Printa a matriz
+    // for(i=0; i<linhas; i++) {
+	// 	for(j=0; j<colunas; j++) { 
+	// 		cout << MapMatrix[i][j];
+	// 	}
+	// 	cout << endl;
+	// }
+    // cout << endl;  
+
+    // cout << MapMatrix[9][4];
