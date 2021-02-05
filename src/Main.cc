@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Test.h"
+#include "../include/Test.h"
 
 #define MAXTAM 100
 using namespace std;
