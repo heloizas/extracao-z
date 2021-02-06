@@ -1,2 +1,2 @@
 teste.exe:
-	g++ Main.cc Mapa.cc -o teste
+	g++ Main.cc Mapa.cc Comandos.cc -o teste

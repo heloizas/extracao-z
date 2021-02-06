@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Mapa.h"
+#include "../include/Mapa.h"
 
 #define MAXTAM 100
 using namespace std;
@@ -22,7 +22,7 @@ void printCommands(string comandos[MAXTAM], int lineCount) {
 	}
 }
 
-int main(int argc, char* argv[]) {
+int backup(int argc, char* argv[]) {
     //Mapa
     int linhas, colunas;
     ifstream fileMap(argv[1]);

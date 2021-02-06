@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "../include/Mapa.h"
+#include "../include/Comandos.h"
 
 using namespace std;
 
@@ -12,6 +13,10 @@ int main(int argc, char* argv[]) {
 
     Mapa mundo(arquivoMapa);
     mundo.imprimirMapa();
-    
+
+    cout << endl;
+
+    Comandos comandos(arquivoComandos);
+    comandos.imprimirComandos();
     return 0;
 }
