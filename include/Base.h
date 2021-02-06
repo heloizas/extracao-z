@@ -7,11 +7,10 @@ using namespace std;
 
 class Base {
     public:
-        Mapa(ifstream &arquivoMapa);
-        void imprimirMapa();
-        ~Mapa();
+        Base();
+        ~Base();
     private:
-        int aliens;
+        int totalAliens;
         int recursosColetados;
 };
 

@@ -11,6 +11,7 @@ class Comandos {
         string comandos[MAXTAM];
         string linhaComando;
         int quantidadeComandos;
+        void furaFila();
     public:
         Comandos(ifstream &arquivoComandos);
         void imprimirComandos();
