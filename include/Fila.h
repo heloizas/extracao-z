@@ -1,7 +1,7 @@
+#include <stdio.h>
+
 #ifndef FILA_H
 #define FILA_H
-
-#include <stdio.h>
 
 using namespace std;
 

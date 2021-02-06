@@ -1,19 +1,24 @@
+#include <stdio.h>
+
 #ifndef ROBOS_H
 #define ROBOS_H
-
-#include <stdio.h>
 
 using namespace std;
 
 class Robos {
+    private:
+        bool ativo;
+        int posicaoX;
+        int posicaoY;
+
+        int fila;
+        int historico;
+        int qtdInimigosEliminados;
+        int qtdRecursosColetados;
     public:
         Robos();
         ~Robos();
-    private:
-        int fila;
-        int historico;
-        int qtdIinimigosEliminados;
-        int qtdRecursosColetados;
+        void imprimirRelatorio();
 };
 
 #endif

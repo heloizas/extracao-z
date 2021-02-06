@@ -3,6 +3,7 @@
 
 #include "../include/Mapa.h"
 #include "../include/Comandos.h"
+#include "../include/ListaRobos.h"
 
 using namespace std;
 
@@ -18,5 +19,13 @@ int main(int argc, char* argv[]) {
 
     Comandos comandos(arquivoComandos);
     comandos.imprimirComandos();
+    
+    cout << endl;
+
+    ListaRobos lista;
+    lista.imprimirRelatorio(1);
+
+    cout << endl;
+
     return 0;
 }

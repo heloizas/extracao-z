@@ -1,7 +1,7 @@
+#include <stdio.h>
+
 #ifndef COMANDOS_H
 #define COMANDOS_H
-
-#include <stdio.h>
 
 using namespace std;
  
@@ -14,8 +14,8 @@ class Comandos {
         void furaFila();
     public:
         Comandos(ifstream &arquivoComandos);
-        void imprimirComandos();
         ~Comandos();
+        void imprimirComandos();
     friend class Mapa;
 };
 

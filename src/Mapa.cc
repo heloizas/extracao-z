@@ -6,13 +6,19 @@
 using namespace std;
 
 Mapa::Mapa(ifstream &arquivoMapa) {
-    arquivoMapa >> linhas >> colunas;
-    for(int i=0; i<linhas; i++) {
-		for(int j=0; j<colunas; j++) { 
-            arquivoMapa >> mapaMatriz[i][j];
+	if (arquivoMapa.is_open()){
+		arquivoMapa >> linhas >> colunas;
+		for(int i=0; i<linhas; i++) {
+			for(int j=0; j<colunas; j++) { 
+				arquivoMapa >> mapaMatriz[i][j];
+			}
 		}
+		} else {
+		cout << "ERRO: Nao foi possivel abrir o arquivo do mapa!" << endl;
 	}
 }
+
+
 
 void Mapa::imprimirMapa() {
 	for(int i=0; i<linhas; i++) {

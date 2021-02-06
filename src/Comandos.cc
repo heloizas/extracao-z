@@ -13,9 +13,8 @@ Comandos::Comandos(ifstream &arquivoComandos) {
             quantidadeComandos++;
         }
     } else {
-        cout << "ERRO: Nao foi possivel abrir o arquivo" << endl;
+        cout << "ERRO: Nao foi possivel abrir o arquivo de comandos!" << endl;
     }
-	cout << "Oi";
 }
 
 void Comandos::imprimirComandos() {

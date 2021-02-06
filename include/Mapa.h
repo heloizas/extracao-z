@@ -1,7 +1,7 @@
+#include <stdio.h>
+
 #ifndef MAPA_H
 #define MAPA_H
-
-#include <stdio.h>
 
 using namespace std;
  
