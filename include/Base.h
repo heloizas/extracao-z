@@ -9,10 +9,12 @@ using namespace std;
 class Base {
     private:
         ListaRobos* robos; 
-        int totalAlien, recursosColetados;
+        int totalAliens, recursosColetados;
+        void relatorioGeral();
     public:
         Base();
         ~Base();
+    friend class Mapa;
 };
 
 #endif

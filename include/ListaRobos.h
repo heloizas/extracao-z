@@ -8,11 +8,12 @@ using namespace std;
 
 class ListaRobos {
     private:
-        Robos* robos[50];
+    // 50 robôs
+        Robos* robos[49];
     public:
         ListaRobos();
         ~ListaRobos();
-        void imprimirRelatorio(int);
+        void imprimirRelatorio(int); 
 };
 
 #endif

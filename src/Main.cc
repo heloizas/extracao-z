@@ -12,20 +12,24 @@ int main(int argc, char* argv[]) {
     ifstream arquivoMapa(argv[1]);
     ifstream arquivoComandos(argv[2]);
 
-    Mapa mundo(arquivoMapa);
-    mundo.imprimirMapa();
+    Mapa mapa(arquivoMapa);
+    mapa.imprimirMapa();
 
     cout << endl;
+    mapa.encontrarPonto(9,9); 
+    cout << endl;
 
-    Comandos comandos(arquivoComandos);
-    comandos.imprimirComandos();
+    // mapa.relatorioGeral(); 
+
+    // Comandos comandos(arquivoComandos);
+    // comandos.imprimirComandos();
     
-    cout << endl;
+    // cout << endl;
 
-    ListaRobos lista;
-    lista.imprimirRelatorio(1);
+    // ListaRobos lista;
+    // lista.imprimirRelatorio(1);
 
-    cout << endl;
+    // cout << endl;
 
     return 0;
 }

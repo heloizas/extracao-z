@@ -7,10 +7,14 @@
 using namespace std;
 
 Base::Base() {
-    totalAlien: 0;
+    totalAliens: 0;
     recursosColetados: 0;
 }
 
 Base::~Base() {
 
+}
+
+void Base::relatorioGeral() {
+    cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
 }

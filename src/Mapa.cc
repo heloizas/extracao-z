@@ -6,6 +6,19 @@
 using namespace std;
 
 Mapa::Mapa(ifstream &arquivoMapa) {
+	mapaBase = 'B';
+	recurso = 'R';
+	obstaculo = 'O';
+	inimigo = 'H';
+	vazio = '.';
+	linhas = 0;
+	colunas = 0;
+
+	base = new Base;
+	gerarMapa(arquivoMapa);
+}
+
+void Mapa::gerarMapa(ifstream &arquivoMapa) {
 	if (arquivoMapa.is_open()){
 		arquivoMapa >> linhas >> colunas;
 		for(int i=0; i<linhas; i++) {
@@ -18,7 +31,23 @@ Mapa::Mapa(ifstream &arquivoMapa) {
 	}
 }
 
-
+void Mapa::encontrarPonto(int x, int y) {
+	if (x >= linhas || x >= colunas){
+		cout << "O ponto solicitado nao existe no mapa";
+	} else if (mapaMatriz[x][y] == recurso){
+		cout << "(" << x << "," << y << "): "<< "Recurso";
+	} else if (mapaMatriz[x][y] == obstaculo){
+		cout << "(" << x << "," << y << "): "<< "Obstáculo";
+	} else if (mapaMatriz[x][y] == inimigo){
+		cout << "(" << x << "," << y << "): "<< "Inimigo";
+	} else if (mapaMatriz[x][y] == vazio){
+		cout << "(" << x << "," << y << "): "<< "Vazio";
+	}
+	else if (mapaMatriz[x][y] == mapaBase){
+		cout << "(" << x << "," << y << "): "<< "Base";
+	}
+    cout << endl;
+}
 
 void Mapa::imprimirMapa() {
 	for(int i=0; i<linhas; i++) {
