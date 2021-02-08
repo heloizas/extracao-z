@@ -1,1 +1,4 @@
 Tudo acontece no mapa, e o mapa tem uma base.
+A base recebe os comandos.
+
+Ordens passadas pela ListaRobos para qual robo

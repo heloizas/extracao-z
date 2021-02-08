@@ -11,7 +11,7 @@ using namespace std;
  
 class Mapa {
     private:
-        Base* base;
+        Base* base; 
         Comandos* comandos;
         char mapaBase, recurso, obstaculo, inimigo, vazio;
         int linhas, colunas;
@@ -19,10 +19,11 @@ class Mapa {
         char mapaMatriz[MAXTAM][MAXTAM];
         void gerarMapa(ifstream &arquivoMapa);
     public:
-        Mapa(ifstream &arquivoMapa);
+        Mapa(ifstream &arquivoMapa, ifstream &arquivoComandos);
         void encontrarPonto(int, int);
         void imprimirMapa();
         ~Mapa();
+        inline void imprimirComandos() const {comandos->imprimirComandos();}
         inline void relatorioGeral() const {base->relatorioGeral();}
 };
 

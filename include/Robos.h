@@ -10,7 +10,6 @@ class Robos {
         bool ativo;
         int posicaoX;
         int posicaoY;
-
         int fila;
         int historico;
         int qtdInimigosEliminados;
@@ -19,6 +18,7 @@ class Robos {
         Robos();
         ~Robos();
         void imprimirRelatorio();
+    friend class ListaRobos;
 };
 
 #endif
