@@ -8,7 +8,8 @@ using namespace std;
 
 Base::Base() {
     totalAliens: 0;
-    recursosColetados: 0;
+    recursosColetados: 0; 
+    robos = new ListaRobos;
 }
 
 Base::~Base() {

@@ -7,13 +7,22 @@
 using namespace std;
 
 ListaRobos::ListaRobos() {
-    
+    for (int i=0; i<50; i++) {
+        robos[i] = new Robos;
+    }
+    // recebeOrdem();
 }
 
-ListaRobos::~ListaRobos() {
-
-}
+// void ListaRobos::recebeOrdem() {
+//     for (int i=0; i<50; i++) {
+//         robos[i]->qtdInimigosEliminados = i;
+//     }
+// } 
 
 void ListaRobos::imprimirRelatorio(int id) {
     robos[id]->imprimirRelatorio();
 } 
+
+ListaRobos::~ListaRobos() {
+
+}

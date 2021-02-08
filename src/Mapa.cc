@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Mapa::Mapa(ifstream &arquivoMapa) {
+Mapa::Mapa(ifstream &arquivoMapa, ifstream &arquivoComandos) {
 	mapaBase = 'B';
 	recurso = 'R';
 	obstaculo = 'O';
@@ -15,12 +15,17 @@ Mapa::Mapa(ifstream &arquivoMapa) {
 	colunas = 0;
 
 	base = new Base;
+	comandos = new Comandos(arquivoComandos);
+
+	arquivoMapa >> linhas >> colunas;
+	
 	gerarMapa(arquivoMapa);
 }
 
 void Mapa::gerarMapa(ifstream &arquivoMapa) {
 	if (arquivoMapa.is_open()){
-		arquivoMapa >> linhas >> colunas;
+		// Tamanho do mapa
+		// Preenche o mapa
 		for(int i=0; i<linhas; i++) {
 			for(int j=0; j<colunas; j++) { 
 				arquivoMapa >> mapaMatriz[i][j];
