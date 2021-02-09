@@ -15,6 +15,7 @@ class ListaRobos {
         ~ListaRobos();
         void adicionarOrdemComando(int, string);
         void imprimirRelatorio(int); 
+        void imprimirFila(); 
         void recebeOrdem();
 };
 

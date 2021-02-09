@@ -25,6 +25,7 @@ class Mapa {
         ~Mapa();
         inline void imprimirComandos() const {comandos->imprimirComandos();}
         inline void relatorioGeral() const {base->relatorioGeral();}
+        inline void imprimirFila() const {base->imprimirFila();}
 };
 
 #endif

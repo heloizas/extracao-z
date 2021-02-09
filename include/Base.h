@@ -15,6 +15,7 @@ class Base {
         Base();
         ~Base();
         void adicionarOrdemComando(int, string);
+        inline void imprimirFila() const {robos->imprimirFila();}
     friend class Mapa;
 };
 
