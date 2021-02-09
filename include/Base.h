@@ -14,6 +14,7 @@ class Base {
     public:
         Base();
         ~Base();
+        void adicionarOrdemComando(int, string);
     friend class Mapa;
 };
 

@@ -13,6 +13,7 @@ class ListaRobos {
     public:
         ListaRobos();
         ~ListaRobos();
+        void adicionarOrdemComando(int, string);
         void imprimirRelatorio(int); 
         void recebeOrdem();
 };

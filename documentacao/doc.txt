@@ -1,4 +1,21 @@
-Tudo acontece no mapa, e o mapa tem uma base.
-A base recebe os comandos.
-
-Ordens passadas pela ListaRobos para qual robo
+Mover:
+    ROBO x: IMPOSSIVEL MOVER PARA (i,j)
+    ROBO x: MOVEU PARA (i,j)
+Coletar:
+    ROBO 1: IMPOSSIVEL COLETAR RECURSOS EM (i,j)
+    ROBO x: RECURSOS COLETADOS EM (i,j)
+Eliminar:
+    ROBO 1: IMPOSSIVEL ELIMINAR ALIEN EM (i,j)
+    ROBO x: ALIEN ELIMINADO EM (i,j)
+Ativar:
+    BASE: ROBO x JA ESTA EM MISSAO
+    BASE: ROBO x SAIU EM MISSAO
+Executar:
+    BASE: ROBO x NAO ESTA EM MISSAO
+Relatorio:
+    HISTORICO
+Retornar:
+    BASE: ROBO x RETORNOU ALIENS 1 RECURSOS 1
+    BASE: ROBO x NAO ESTA EM MISSAO
+Geral:
+    BASE: TOTAL DE ALIENS 3 RECURSOS 1

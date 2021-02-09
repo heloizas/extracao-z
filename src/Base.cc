@@ -12,10 +12,15 @@ Base::Base() {
     robos = new ListaRobos;
 }
 
-Base::~Base() {
 
+void Base::adicionarOrdemComando(int id, string comando) {
+  robos->adicionarOrdemComando(id, comando); 
 }
 
 void Base::relatorioGeral() {
     cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
+} 
+
+Base::~Base() {
+
 }

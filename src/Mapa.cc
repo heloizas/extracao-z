@@ -15,10 +15,9 @@ Mapa::Mapa(ifstream &arquivoMapa, ifstream &arquivoComandos) {
 	colunas = 0;
 
 	base = new Base;
-	comandos = new Comandos(arquivoComandos);
+	comandos = new Comandos(arquivoComandos, *base);
 
 	arquivoMapa >> linhas >> colunas;
-	
 	gerarMapa(arquivoMapa);
 }
 

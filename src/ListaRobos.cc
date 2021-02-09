@@ -23,6 +23,11 @@ void ListaRobos::imprimirRelatorio(int id) {
     robos[id]->imprimirRelatorio();
 } 
 
+void ListaRobos::adicionarOrdemComando(int id, string comando) {
+    robos[id]->adicionarOrdemComando(id, comando); 
+    robos[0]->imprimirFila();
+}
+
 ListaRobos::~ListaRobos() {
 
 }

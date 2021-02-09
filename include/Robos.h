@@ -10,14 +10,18 @@ class Robos {
         bool ativo;
         int posicaoX;
         int posicaoY;
-        int fila;
         int historico;
         int qtdInimigosEliminados;
         int qtdRecursosColetados;
+        int filaAux;
+        static const int MAXTAM = 100;
+        string fila[MAXTAM];
     public:
         Robos();
         ~Robos();
         void imprimirRelatorio();
+        void imprimirFila();
+        void adicionarOrdemComando(int, string);
     friend class ListaRobos;
 };
 

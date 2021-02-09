@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "Base.h"
 
 #ifndef COMANDOS_H
 #define COMANDOS_H
@@ -16,20 +17,20 @@ class Comandos {
         int coordenadaX;
         int coordenadaY;
         void furaFila();
-        void gerarComandos(ifstream &arquivoComandos);
-        void executarComando(string);
-        void executarComandoDireto(string);
-        void executarComandoOrdem(string);
         int tipoComando(string);
-        void comandoMover(string);
-        void comandoColetar(string);
-        void comandoEliminar(string);
-        void comandoAtivar(string);
-        void comandoExecutar(string);
-        void comandoRelatorio(string);
-        void comandoRetornar(string);
+        void gerarComandos(ifstream &arquivoComandos, Base &base);
+        void executarComando(string, Base &base);
+        void executarComandoOrdem(string, Base &base);
+        void executarComandoDireto(string, Base &base);
+        void comandoMover(string, Base &base);
+        void comandoColetar(string, Base &base);
+        void comandoEliminar(string, Base &base);
+        void comandoAtivar(string, Base &base);
+        void comandoExecutar(string, Base &base);
+        void comandoRelatorio(string, Base &base);
+        void comandoRetornar(string, Base &base);
     public:
-        Comandos(ifstream &arquivoComandos);
+        Comandos(ifstream &arquivoComandos, Base &base);
         ~Comandos();
         void imprimirComandos();
     friend class Mapa;
