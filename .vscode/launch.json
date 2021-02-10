@@ -13,7 +13,7 @@
                 "/src/mapa.txt",
                 "/src/comandos.txt",
             ],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal",
