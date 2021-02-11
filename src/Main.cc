@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     ifstream arquivoComandos(argv[2]);
 
     Mapa mapa(arquivoMapa, arquivoComandos);
-    // mapa.imprimirFila();
+    mapa.imprimirFila(); 
     // mapa.imprimirMapa();
 
     // cout << endl;
@@ -25,21 +25,21 @@ int main(int argc, char* argv[]) {
     // cout << endl;
 
     // Fila
-    Fila FTeste;
-    string comando[5];
-    comando[0] = "Primeiro";
-    comando[1] = "Segundo";
-    comando[2] = "Terceiro";
-    comando[3] = "Quarto";
+    // Fila FTeste;
+    // string comando[5];
+    // comando[0] = "Primeiro";
+    // comando[1] = "Segundo";
+    // comando[2] = "Terceiro";
+    // comando[3] = "Quarto";
 
-    for(int i=0; i<4; i++){
-        FTeste.Enfileira(comando[i]);
-    }
+    // for(int i=0; i<4; i++){
+    //     FTeste.Enfileira(comando[i]);
+    // }
 
-    comando[4] = "*Prioritario";
-    FTeste.InserePrioritario(comando[4]);
+    // comando[4] = "*Prioritario";
+    // FTeste.InserePrioritario(comando[4]);
 
-    FTeste.Imprime();
+    // FTeste.Imprime();
 
     return 0;
 }

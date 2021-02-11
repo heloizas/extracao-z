@@ -11,8 +11,6 @@ Base::Base() {
     recursosColetados: 0; 
     robos = new ListaRobos;
 }
-
-
 void Base::adicionarOrdemComando(int id, string comando) {
   robos->adicionarOrdemComando(id, comando); 
 }

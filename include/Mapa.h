@@ -8,7 +8,6 @@
 
 using namespace std;
 
- 
 class Mapa {
     private:
         Base* base; 

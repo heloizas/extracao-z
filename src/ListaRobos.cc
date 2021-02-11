@@ -24,15 +24,14 @@ void ListaRobos::imprimirRelatorio(int id) {
 }
 
 void ListaRobos::imprimirFila() {
+    // Colocar outro id
     int id = 0;
     robos[id]->imprimirFila();
 } 
 
 void ListaRobos::adicionarOrdemComando(int id, string comando) {
-    robos[id]->adicionarOrdemComando(id, comando); 
+    robos[id]->adicionarOrdemComando(comando);  
 }
-
-
 
 ListaRobos::~ListaRobos() {
 

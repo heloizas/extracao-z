@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "Fila.h"
 
 #ifndef ROBOS_H
 #define ROBOS_H
@@ -13,15 +14,13 @@ class Robos {
         int historico;
         int qtdInimigosEliminados;
         int qtdRecursosColetados;
-        int filaAux;
-        static const int MAXTAM = 100;
-        string fila[MAXTAM];
+        Fila* filaOrdemComandos[1];
     public:
         Robos();
         ~Robos();
         void imprimirRelatorio();
         void imprimirFila();
-        void adicionarOrdemComando(int, string);
+        void adicionarOrdemComando(string);
     friend class ListaRobos;
 };
 
