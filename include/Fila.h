@@ -9,6 +9,7 @@ class Fila {
     public:
         Fila();
         void Enfileira(string);
+        void InserePrioritario(string);
         string Desenfileira();
         void Imprime();
         ~Fila();
@@ -16,7 +17,7 @@ class Fila {
         int frente;
         int tras;
         static const int MAXTAM = 100;
-        string itens[MAXTAM];
+        string comandos[MAXTAM];
         int tamanho;
 };
 

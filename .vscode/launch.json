@@ -9,10 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [
-                "/src/mapa.txt",
-                "/src/comandos.txt",
-            ],
+            "args": ["${fileDirname}/mapa.txt", "${fileDirname}/comandos.txt"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

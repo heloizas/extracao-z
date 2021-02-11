@@ -24,22 +24,22 @@ int main(int argc, char* argv[]) {
     // mapa.imprimirComandos(); 
     // cout << endl;
 
-    //  Fila
-    // Fila FTeste;
-    // string comando[4];
-    // comando[0] = "Primeiro";
-    // comando[1] = "Segundo";
-    // comando[2] = "Terceiro";
-    // comando[3] = "Quarto";
+    // Fila
+    Fila FTeste;
+    string comando[5];
+    comando[0] = "Primeiro";
+    comando[1] = "Segundo";
+    comando[2] = "Terceiro";
+    comando[3] = "Quarto";
 
-    // for(int i=0; i<4; i++){
-    //     FTeste.Enfileira(comando[i]);
-    // }
-    // FTeste.Imprime();
-    // FTeste.Desenfileira();
-    // cout << endl;
-    // FTeste.Imprime();
-    // FTeste.Desenfileira();
-    
+    for(int i=0; i<4; i++){
+        FTeste.Enfileira(comando[i]);
+    }
+
+    comando[4] = "*Prioritario";
+    FTeste.InserePrioritario(comando[4]);
+
+    FTeste.Imprime();
+
     return 0;
 }
