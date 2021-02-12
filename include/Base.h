@@ -14,7 +14,8 @@ class Base {
     public:
         Base();
         ~Base();
-        void adicionarOrdemComando(int, string);
+        void adicionarComando(int, string);
+        void adicionarComandoPrioritario(int, string);
         inline void imprimirFila() const {robos->imprimirFila();}
     friend class Mapa;
 };

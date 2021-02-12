@@ -29,8 +29,12 @@ void ListaRobos::imprimirFila() {
     robos[id]->imprimirFila();
 } 
 
-void ListaRobos::adicionarOrdemComando(int id, string comando) {
-    robos[id]->adicionarOrdemComando(comando);  
+void ListaRobos::adicionarComando(int id, string comando) {
+    robos[id]->adicionarComando(comando);  
+}
+
+void ListaRobos::adicionarComandoPrioritario(int id, string comando) {
+    robos[id]->adicionarComandoPrioritario(comando);  
 }
 
 ListaRobos::~ListaRobos() {

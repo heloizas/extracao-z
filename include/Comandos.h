@@ -16,11 +16,12 @@ class Comandos {
         int idRobo;
         int coordenadaX;
         int coordenadaY;
+        bool auxPrioritaria;
         void furaFila();
         int tipoComando(string);
         void gerarComandos(ifstream &arquivoComandos, Base &base);
         void executarComando(string, Base &base);
-        void executarComandoOrdem(string, Base &base);
+        void executarComandoOrdem(string, Base &base, bool);
         void executarComandoDireto(string, Base &base);
         void comandoMover(string, Base &base);
         void comandoColetar(string, Base &base);

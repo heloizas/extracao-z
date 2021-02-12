@@ -14,13 +14,14 @@ class Robos {
         int historico;
         int qtdInimigosEliminados;
         int qtdRecursosColetados;
-        Fila* filaOrdemComandos[1];
+        Fila* filaComandos[1];
     public:
         Robos();
         ~Robos();
         void imprimirRelatorio();
         void imprimirFila();
-        void adicionarOrdemComando(string);
+        void adicionarComando(string);
+        void adicionarComandoPrioritario(string);
     friend class ListaRobos;
 };
 

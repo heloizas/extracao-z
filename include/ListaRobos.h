@@ -13,7 +13,8 @@ class ListaRobos {
     public:
         ListaRobos();
         ~ListaRobos();
-        void adicionarOrdemComando(int, string);
+        void adicionarComando(int, string);
+        void adicionarComandoPrioritario(int, string);
         void imprimirRelatorio(int); 
         void imprimirFila(); 
         void recebeOrdem();

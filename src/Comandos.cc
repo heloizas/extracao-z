@@ -7,7 +7,8 @@ using namespace std;
 
 Comandos::Comandos(ifstream &arquivoComandos, Base &base) {
     quantidadeComandos = 0;
-    tipo = 1; 
+    tipo = 1;
+    auxPrioritaria = true;
     gerarComandos(arquivoComandos, base);
 }
 
@@ -24,12 +25,13 @@ void Comandos::gerarComandos(ifstream &arquivoComandos, Base &base) {
 }
 
 void Comandos::executarComando(string comando, Base &base) {
+    auxPrioritaria = false;
     if(tipoComando(comando) == 3) {
-        // Prioridade
-        // cout << comando << endl;
+        auxPrioritaria = true;
+        executarComandoOrdem(comando, base, auxPrioritaria);
     }
     if (tipoComando(comando) == 1) {
-        executarComandoOrdem(comando, base);
+        executarComandoOrdem(comando, base, auxPrioritaria);
     } else if (tipoComando(comando) == 2) {
         executarComandoDireto(comando, base);
     }
@@ -48,7 +50,7 @@ void Comandos:: executarComandoDireto(string comando, Base &base) {
     }
 }
 
-void Comandos:: executarComandoOrdem(string comando, Base &base) {
+void Comandos:: executarComandoOrdem(string comando, Base &base, bool prioritaria) {
     if(comando.find("MOVER") != string::npos) {
         comandoMover(comando, base);
     } else if(comando.find("COLETAR") != string::npos) {
@@ -77,24 +79,30 @@ int Comandos::tipoComando(string comando) {
 void Comandos::comandoMover(string comando, Base &base) {
     coordenadaX = stoi(comando.substr(comando.find("(")+1,comando.find(",")));
     coordenadaY = stoi(comando.substr(comando.find(",")+1,comando.find(")")));
-//   cout << comando << endl;
     idRobo = stoi(comando.substr(6, 8));
-//   cout << "idRobo mover: " << idRobo << " " << coordenadaX << coordenadaY << endl;
-    base.adicionarOrdemComando(idRobo, comando);
+    if (auxPrioritaria) {
+        base.adicionarComandoPrioritario(idRobo, comando);
+    } else {
+        base.adicionarComando(idRobo, comando);
+    }
 }
 
 void Comandos::comandoColetar(string comando, Base &base) {
-//   cout << comando << endl;
     idRobo = stoi(comando.substr(8, comando.length()));
-//   cout << "idRobo coletar: " << idRobo << endl;
-    base.adicionarOrdemComando(idRobo, comando);
+    if (auxPrioritaria) {
+        base.adicionarComandoPrioritario(idRobo, comando);
+    } else {
+        base.adicionarComando(idRobo, comando);   
+    }
 }
 
 void Comandos::comandoEliminar(string comando, Base &base) {
-//   cout << comando << endl;
     idRobo = stoi(comando.substr(9, comando.length()));
-//   cout << "idRobo eliminar: " << idRobo << endl;
-    base.adicionarOrdemComando(idRobo, comando);
+    if (auxPrioritaria) {
+        base.adicionarComandoPrioritario(idRobo, comando);
+    } else {
+        base.adicionarComando(idRobo, comando);     
+    }
 }
 
 // Ordens diretas:

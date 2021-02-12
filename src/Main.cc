@@ -26,8 +26,8 @@ int main(int argc, char* argv[]) {
 
     // Fila
     // Fila FTeste;
-    // string comando[5];
-    // comando[0] = "Primeiro";
+    // string comando[6];
+    // comando[0] = "Primeiro"; 
     // comando[1] = "Segundo";
     // comando[2] = "Terceiro";
     // comando[3] = "Quarto";
@@ -39,6 +39,8 @@ int main(int argc, char* argv[]) {
     // comando[4] = "*Prioritario";
     // FTeste.InserePrioritario(comando[4]);
 
+    // comando[5] = "**2Prioritario";
+    // FTeste.InserePrioritario(comando[5]);
     // FTeste.Imprime();
 
     return 0;
