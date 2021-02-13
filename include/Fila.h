@@ -16,8 +16,7 @@ class Fila {
     private:
         int frente;
         int tras;
-        // To-do mudar maxtam
-        static const int MAXTAM = 8;
+        static const int MAXTAM = 100;
         string comandos[MAXTAM];
         int tamanho;
 };

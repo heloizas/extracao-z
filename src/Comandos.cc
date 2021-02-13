@@ -20,7 +20,7 @@ void Comandos::gerarComandos(ifstream &arquivoComandos, Base &base) {
             executarComando(linhaComando, base);
         }
     } else {
-        cout << "ERRO: Nao foi possivel abrir o arquivo de comandos!" << endl;
+        cout << "Nao foi possivel abrir o arquivo de comandos! Verifique o nome e a localizacao do arquivo." << endl;
     }
 }
 
@@ -38,19 +38,19 @@ void Comandos::executarComando(string comando, Base &base) {
     tipoComando(comando);
 }
 
-void Comandos:: executarComandoDireto(string comando, Base &base) {
+void Comandos::executarComandoDireto(string comando, Base &base) {
     if(comando.find("ATIVAR") != string::npos) {
         comandoAtivar(comando, base);
     } else if(comando.find("EXECUTAR") != string::npos) {
-        comandoExecutar(comando, base);
+        // comandoExecutar(comando, base);
     } else if(comando.find("RELATORIO") != string::npos) {
         comandoRelatorio(comando, base);
     } else if(comando.find("RETORNAR") != string::npos) {
-        comandoRetornar(comando, base);
+        // comandoRetornar(comando, base);
     }
 }
 
-void Comandos:: executarComandoOrdem(string comando, Base &base, bool prioritaria) {
+void Comandos::executarComandoOrdem(string comando, Base &base, bool prioritaria) {
     if(comando.find("MOVER") != string::npos) {
         comandoMover(comando, base);
     } else if(comando.find("COLETAR") != string::npos) {
@@ -71,7 +71,6 @@ int Comandos::tipoComando(string comando) {
     || (comando.find("RELATORIO") != string::npos) || (comando.find("RETORNAR") != string::npos)) {
         tipo = 2;
     }
-    // cout << tipo << endl;
     return tipo;
 }
 
@@ -107,28 +106,24 @@ void Comandos::comandoEliminar(string comando, Base &base) {
 
 // Ordens diretas:
 void Comandos::comandoAtivar(string comando, Base &base) {
-//   cout << comando << endl;
     idRobo = stoi(comando.substr(7, comando.length()));
-//   cout << "idRobo ativar: " << idRobo << endl;
+    base.ativarRobo(idRobo);
 }
 
-void Comandos::comandoExecutar(string comando, Base &base) {
-//   cout << comando << endl;
-    idRobo = stoi(comando.substr(9, comando.length()));
-//   cout << "idRobo executar: " << idRobo << endl;
-}
+// void Comandos::comandoExecutar(string comando, Base &base) {
+//     idRobo = stoi(comando.substr(9, comando.length()));
+//     base.executarRobo(idRobo);
+// }
 
 void Comandos::comandoRelatorio(string comando, Base &base) {
-//   cout << comando << endl;
     idRobo = stoi(comando.substr(10, comando.length()));
-//   cout << "idRobo relatorio: " << idRobo << endl;
+    base.relatorioRobo(idRobo);
 }
 
-void Comandos::comandoRetornar(string comando, Base &base) {
-//   cout << comando << endl;
-    idRobo = stoi(comando.substr(9, comando.length()));
-//   cout << "idRobo retornar: " << idRobo << endl;
-}
+// void Comandos::comandoRetornar(string comando, Base &base) {
+//     idRobo = stoi(comando.substr(9, comando.length()));
+//     base.retornarRobo(idRobo);
+// }
 
 void Comandos::imprimirComandos() {
 	for(int i=0; i<quantidadeComandos; i++) {

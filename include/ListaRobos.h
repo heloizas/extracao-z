@@ -12,12 +12,18 @@ class ListaRobos {
         Robos* robos[50];
     public:
         ListaRobos();
-        ~ListaRobos();
+        ~ListaRobos(); 
         void adicionarComando(int, string);
         void adicionarComandoPrioritario(int, string);
-        void imprimirRelatorio(int); 
+
+        // To-do: colocar ID
+        void executarRobo(int);
+        bool ativarRobo(int);
+        void retornarRobo(int);
+        void relatorioRobo(int);
+
+        void imprimirRelatorio(); 
         void imprimirFila(); 
-        void recebeOrdem();
 };
 
 #endif

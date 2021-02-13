@@ -21,8 +21,8 @@ class Comandos {
         int tipoComando(string);
         void gerarComandos(ifstream &arquivoComandos, Base &base);
         void executarComando(string, Base &base);
-        void executarComandoOrdem(string, Base &base, bool);
         void executarComandoDireto(string, Base &base);
+        void executarComandoOrdem(string, Base &base, bool);
         void comandoMover(string, Base &base);
         void comandoColetar(string, Base &base);
         void comandoEliminar(string, Base &base);

@@ -14,7 +14,8 @@ int main(int argc, char* argv[]) {
     ifstream arquivoComandos(argv[2]);
 
     Mapa mapa(arquivoMapa, arquivoComandos);
-    mapa.imprimirFila(); 
+    // mapa.imprimirFila(); 
+    // mapa.imprimirRelatorio();
     // mapa.imprimirMapa();
 
     // cout << endl;

@@ -31,7 +31,7 @@ void Mapa::gerarMapa(ifstream &arquivoMapa) {
 			}
 		}
 		} else {
-		cout << "ERRO: Nao foi possivel abrir o arquivo do mapa!" << endl;
+		cout << "Nao foi possivel abrir o arquivo do mapa! Verifique o nome e a localizacao do arquivo." << endl;
 	}
 }
 

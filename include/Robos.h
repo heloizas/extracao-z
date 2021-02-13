@@ -11,10 +11,10 @@ class Robos {
         bool ativo;
         int posicaoX;
         int posicaoY;
-        int historico;
         int qtdInimigosEliminados;
         int qtdRecursosColetados;
         Fila* filaComandos[1];
+        Fila* filaHistorico[1];
     public:
         Robos();
         ~Robos();
@@ -22,6 +22,8 @@ class Robos {
         void imprimirFila();
         void adicionarComando(string);
         void adicionarComandoPrioritario(string);
+        bool ativarRobo();
+
     friend class ListaRobos;
 };
 

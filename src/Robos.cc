@@ -12,10 +12,15 @@ Robos::Robos() {
     posicaoY: 0;
     qtdInimigosEliminados: 0;
     qtdRecursosColetados: 0;
-    // To-do: Mudar para quantidade de comandos
     filaComandos[0] = new Fila;
+    filaHistorico[0] = new Fila;
 }
  
+bool Robos::ativarRobo() {
+  ativo = true;
+  return ativo;
+}
+
 void Robos::adicionarComando(string comando) { 
     filaComandos[0]->Enfileira(comando);
 } 
@@ -25,7 +30,7 @@ void Robos::adicionarComandoPrioritario(string comando) {
 } 
 
 void Robos::imprimirRelatorio() {
-    cout << "Relatorio";
+    filaHistorico[0]->Imprime();
 }
 
 void Robos::imprimirFila() {
