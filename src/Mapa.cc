@@ -50,6 +50,10 @@ string Mapa::encontrarPonto(int x, int y) {
     return ponto;
 }
 
+void Mapa::adicionarPonto(int x, int y) {
+	mapaMatriz[x][y] = '.';
+}
+
 void Mapa::imprimirMapa() {
 	for(int i=0; i<linhas; i++) {
 		for(int j=0; j<colunas; j++) { 

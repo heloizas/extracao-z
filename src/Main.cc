@@ -15,7 +15,6 @@ int main(int argc, char* argv[]) {
     ifstream arquivoComandos(argv[2]);
 
     Missao missao(arquivoMapa, arquivoComandos);
-    // mapa.imprimirFila(); 
     // mapa.imprimirRelatorio();
     // mapa.imprimirMapa();
 

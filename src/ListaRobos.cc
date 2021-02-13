@@ -37,19 +37,6 @@ void ListaRobos::relatorioRobo(int idRobo) {
     robos[idRobo]->imprimirRelatorio();
 };
 
-// To-do: Remover
-// void ListaRobos::imprimirRelatorio() {
-//     // To-do Colocar outro id
-//     int idRobo = 0;
-//     robos[idRobo]->imprimirRelatorio();
-// }
-
-// void ListaRobos::imprimirFila() {
-//     // To-do Colocar outro id
-//     int idRobo = 0;
-//     robos[idRobo]->imprimirFila();
-// } 
-
 ListaRobos::~ListaRobos() {
 
 }

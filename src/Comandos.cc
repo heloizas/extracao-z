@@ -113,15 +113,16 @@ void Comandos::comandoExecutar(string comando, Base &base) {
     base.executarRobo(idRobo);
 }
 
-void Comandos::comandoRelatorio(string comando, Base &base) {
-    idRobo = stoi(comando.substr(10, comando.length()));
-    base.relatorioRobo(idRobo);
-}
 
 // void Comandos::comandoRetornar(string comando, Base &base) {
 //     idRobo = stoi(comando.substr(9, comando.length()));
 //     base.retornarRobo(idRobo);
 // }
+
+void Comandos::comandoRelatorio(string comando, Base &base) {
+    idRobo = stoi(comando.substr(10, comando.length()));
+    base.relatorioRobo(idRobo);
+}
 
 void Comandos::imprimirComandos() {
 	for(int i=0; i<quantidadeComandos; i++) {
