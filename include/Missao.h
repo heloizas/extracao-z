@@ -16,10 +16,6 @@ class Missao {
     public:
         Missao(ifstream &arquivoMapa, ifstream &arquivoComandos);
         ~Missao();
-        // inline void imprimirComandos() const {comandos->imprimirComandos();}
-        // inline void relatorioGeral() const {base->relatorioGeral();}
-        // inline void imprimirFila() const {base->imprimirFila();}
-        // inline void imprimirRelatorio() const {base->imprimirRelatorio();}
 };
 
 #endif

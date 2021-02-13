@@ -22,10 +22,6 @@ class Base {
         void ativarRobo(int);
         void retornarRobo(int);
         void relatorioRobo(int);
-
-        // To-do: deletar
-        inline void imprimirFila() const {robos->imprimirFila();}
-        inline void imprimirRelatorio() const {robos->imprimirRelatorio();}
     friend class Mapa;
 };
 

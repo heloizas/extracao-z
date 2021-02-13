@@ -16,12 +16,9 @@ class Mapa {
     public:
         Mapa(ifstream &arquivoMapa);
         string encontrarPonto(int, int);
+        void adicionarPonto(int, int);
         void imprimirMapa(); 
         ~Mapa();
-        // inline void imprimirComandos() const {comandos->imprimirComandos();}
-        // inline void relatorioGeral() const {base->relatorioGeral();}
-        // inline void imprimirFila() const {base->imprimirFila();}
-        // inline void imprimirRelatorio() const {base->imprimirRelatorio();}
 };
 
 #endif

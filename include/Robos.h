@@ -25,11 +25,10 @@ class Robos {
         void adicionarComandoPrioritario(string);
         bool ativarRobo();
         void comandoMover(string, Mapa& mapa);
-        // void comandoColetar(Mapa& mapa);
-        // void comandoEliminar(Mapa& mapa);
+        void comandoColetar(Mapa& mapa);
+        void comandoEliminar(Mapa& mapa);
         void executarRobo(Mapa& mapa);
         void imprimirRelatorio();
-        void imprimirFila();
         void processarComando(string, Mapa& mapa);
 
     friend class ListaRobos;

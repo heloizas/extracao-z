@@ -22,9 +22,7 @@ class ListaRobos {
         bool ativarRobo(int);
         void retornarRobo(int);
         void relatorioRobo(int);
-
         void imprimirRelatorio(); 
-        void imprimirFila(); 
 };
 
 #endif
