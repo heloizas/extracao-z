@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "../include/Mapa.h"
+#include "../include/Missao.h"
 #include "../include/Comandos.h"
 #include "../include/ListaRobos.h"
 #include "../include/Fila.h"
@@ -13,7 +14,7 @@ int main(int argc, char* argv[]) {
     ifstream arquivoMapa(argv[1]);
     ifstream arquivoComandos(argv[2]);
 
-    Mapa mapa(arquivoMapa, arquivoComandos);
+    Missao missao(arquivoMapa, arquivoComandos);
     // mapa.imprimirFila(); 
     // mapa.imprimirRelatorio();
     // mapa.imprimirMapa();

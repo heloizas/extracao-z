@@ -16,6 +16,7 @@
                 "src/ListaRobos.cc",
                 "src/Mapa.cc",
                 "src/Robos.cc",
+                "src/Missao.cc",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

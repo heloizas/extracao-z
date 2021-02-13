@@ -2,24 +2,21 @@
 #include <string>
 #include "Base.h"
 #include "Comandos.h"
+#include "Mapa.h"
 
-#ifndef MAPA_H
-#define MAPA_H
+#ifndef MISSAO_H
+#define MISSAO_H
 
 using namespace std;
 
-class Mapa {
+class Missao {
     private:
-        char mapaBase, recurso, obstaculo, inimigo, vazio;
-        int linhas, colunas;
-        static const int MAXTAM = 100;
-        char mapaMatriz[MAXTAM][MAXTAM];
-        void gerarMapa(ifstream &arquivoMapa);
+        Mapa* mapa; 
+        Base* base; 
+        Comandos* comandos;
     public:
-        Mapa(ifstream &arquivoMapa);
-        void encontrarPonto(int, int);
-        void imprimirMapa();
-        ~Mapa();
+        Missao(ifstream &arquivoMapa, ifstream &arquivoComandos);
+        ~Missao();
         // inline void imprimirComandos() const {comandos->imprimirComandos();}
         // inline void relatorioGeral() const {base->relatorioGeral();}
         // inline void imprimirFila() const {base->imprimirFila();}
