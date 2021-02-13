@@ -29,9 +29,22 @@ bool ListaRobos::ativarRobo(int idRobo) {
     return robos[idRobo]->ativarRobo() ? true : false;
 }
 
-// void ListaRobos::retornarRobo(int idRobo) {
-    
-// }
+bool ListaRobos::roboAtivo(int idRobo) {
+    return robos[idRobo]->roboAtivo();
+}
+
+int ListaRobos::qtdRecursos(int idRobo) {
+    return robos[idRobo]->qtdRecursos();
+}
+
+int ListaRobos::qtdInimigos(int idRobo) {
+    return robos[idRobo]->qtdRecursos();
+}
+
+void ListaRobos::retornarRobo(int idRobo) {
+    robos[idRobo]->retornarBase();
+};
+
 
 void ListaRobos::relatorioRobo(int idRobo) {
     robos[idRobo]->imprimirRelatorio();

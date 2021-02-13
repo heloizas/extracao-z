@@ -20,9 +20,12 @@ class ListaRobos {
         // To-do: colocar ID
         void executarRobo(int, Mapa&);
         bool ativarRobo(int);
+        bool roboAtivo(int);
         void retornarRobo(int);
         void relatorioRobo(int);
-        void imprimirRelatorio(); 
+        int qtdRecursos(int);
+        int qtdInimigos(int);
+        // void imprimirRelatorio();
 };
 
 #endif

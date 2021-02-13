@@ -18,8 +18,12 @@ Robos::Robos(int id) {
     filaHistorico[0] = new Fila;
 }
  
+bool Robos::roboAtivo(){
+    return ativo;
+}
+
 bool Robos::ativarRobo() {
-    bool estaAtivo = ativo;
+    bool estaAtivo = roboAtivo();
     ativo = true;
     return estaAtivo;
 }
@@ -53,9 +57,9 @@ void Robos::comandoMover(string comando, Mapa& mapa) {
     int coordenadaY = stoi(comando.substr(comando.find(",")+1,comando.find(")")));
     string auxHistorico;
     if (mapa.encontrarPonto(coordenadaX,coordenadaY)!="Obstaculo") {
-        auxHistorico = "ROBO "+to_string(idRobo)+": MOVEU PARA ("+to_string(coordenadaX)+","+to_string(coordenadaY)+")";
         posicaoX = coordenadaX;
         posicaoY = coordenadaY;
+        auxHistorico = "ROBO "+to_string(idRobo)+": MOVEU PARA ("+to_string(coordenadaX)+","+to_string(coordenadaY)+")";
     } 
     else {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL MOVER PARA ("+to_string(coordenadaX)+","+to_string(coordenadaY)+")";
@@ -65,9 +69,9 @@ void Robos::comandoMover(string comando, Mapa& mapa) {
 
 void Robos::comandoColetar(Mapa& mapa) {
     if(mapa.encontrarPonto(posicaoX, posicaoY) == "Recurso") {
-        auxHistorico = "ROBO "+to_string(idRobo)+": RECURSOS COLETADOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
         mapa.adicionarPonto(posicaoX, posicaoY);
         qtdRecursosColetados++;
+        auxHistorico = "ROBO "+to_string(idRobo)+": RECURSOS COLETADOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
     else {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL COLETAR RECURSOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
@@ -88,6 +92,26 @@ void Robos::comandoEliminar(Mapa& mapa) {
     }
     filaHistorico[0]->Enfileira(auxHistorico);
     mapa.imprimirMapa();
+}
+
+int Robos::qtdRecursos(){
+    return qtdRecursosColetados;
+}
+
+int Robos::qtdInimigos(){
+    return qtdInimigosEliminados;
+}
+
+void Robos::retornarBase() {
+    ativo = false;
+    posicaoX = 0;
+    posicaoY = 0;
+    qtdInimigosEliminados: 0;
+    qtdRecursosColetados: 0;
+    int tamanho = filaComandos[0]->tamanho;
+    for(int i=0; i < tamanho; i++) {
+        filaComandos[0]->Desenfileira();
+    }
 }
 
 void Robos::adicionarComando(string comando) { 

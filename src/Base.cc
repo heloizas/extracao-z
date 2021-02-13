@@ -32,15 +32,24 @@ void Base::executarRobo(int idRobo) {
 
 void Base::ativarRobo(int idRobo) {
   if(robos->ativarRobo(idRobo)) {
-    std::cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << std::endl;
+    cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
     return;
   }
   cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
-}
+} 
 
-// void Base::retornarRobo(int idRobo) {
-    
-// }
+void Base::retornarRobo(int idRobo) {
+  if(!robos->roboAtivo(idRobo)) {
+    cout << "BASE: ROBO " << idRobo << " NAO ESTA EM MISSAO" << endl;
+  } else {
+    int auxInimigos = robos->qtdInimigos(idRobo);
+    int auxRecursos = robos->qtdRecursos(idRobo);
+    robos->retornarRobo(idRobo);
+    cout << "BASE: ROBO " << idRobo << " RETORNOU ALIENS " << auxInimigos << " RECURSOS " << auxRecursos << endl;
+    totalAliens = totalAliens+auxInimigos;
+    recursosColetados = recursosColetados+auxRecursos;
+  } 
+}
 
 void Base::relatorioRobo(int idRobo) {
   robos->relatorioRobo(idRobo); 

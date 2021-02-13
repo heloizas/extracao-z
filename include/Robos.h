@@ -30,7 +30,10 @@ class Robos {
         void executarRobo(Mapa& mapa);
         void imprimirRelatorio();
         void processarComando(string, Mapa& mapa);
-
+        bool roboAtivo();
+        int qtdRecursos();
+        int qtdInimigos();
+        void retornarBase();
     friend class ListaRobos;
 };
 

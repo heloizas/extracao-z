@@ -46,7 +46,7 @@ void Comandos::executarComandoDireto(string comando, Base &base) {
     } else if(comando.find("RELATORIO") != string::npos) {
         comandoRelatorio(comando, base);
     } else if(comando.find("RETORNAR") != string::npos) {
-        // comandoRetornar(comando, base);
+        comandoRetornar(comando, base);
     }
 }
 
@@ -114,10 +114,10 @@ void Comandos::comandoExecutar(string comando, Base &base) {
 }
 
 
-// void Comandos::comandoRetornar(string comando, Base &base) {
-//     idRobo = stoi(comando.substr(9, comando.length()));
-//     base.retornarRobo(idRobo);
-// }
+void Comandos::comandoRetornar(string comando, Base &base) {
+    idRobo = stoi(comando.substr(9, comando.length()));
+    base.retornarRobo(idRobo);
+}
 
 void Comandos::comandoRelatorio(string comando, Base &base) {
     idRobo = stoi(comando.substr(10, comando.length()));
