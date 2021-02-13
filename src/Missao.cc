@@ -6,11 +6,10 @@
 using namespace std;
 
 Missao::Missao(ifstream &arquivoMapa, ifstream &arquivoComandos) {
-	mapa = new Mapa(arquivoMapa);
-	base = new Base;
+	base = new Base(arquivoMapa);
 	comandos = new Comandos(arquivoComandos, *base);
 }
 
-Missao::~Missao() {
+Missao::~Missao() { 
 
 }

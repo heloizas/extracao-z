@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <string>
-#include "Base.h"
-#include "Comandos.h"
 
 #ifndef MAPA_H
 #define MAPA_H

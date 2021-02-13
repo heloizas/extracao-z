@@ -3,17 +3,19 @@
 
 #include "../include/Base.h"
 #include "../include/ListaRobos.h"
+#include "../include/Mapa.h"
 
 using namespace std;
 
-Base::Base() {
-    totalAliens: 0;
-    recursosColetados: 0; 
-    robos = new ListaRobos;
+Base::Base(ifstream &arquivoMapa) {
+  mapa = new Mapa(arquivoMapa);
+  totalAliens: 0;
+  recursosColetados: 0; 
+  robos = new ListaRobos;
 }
 
 void Base::relatorioGeral() {
-    cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
+  cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
 } 
 
 void Base::adicionarComando(int idRobo, string comando) {

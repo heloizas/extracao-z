@@ -11,7 +11,6 @@ using namespace std;
 
 class Missao {
     private:
-        Mapa* mapa; 
         Base* base; 
         Comandos* comandos;
     public:
