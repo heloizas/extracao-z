@@ -42,7 +42,7 @@ void Comandos::executarComandoDireto(string comando, Base &base) {
     if(comando.find("ATIVAR") != string::npos) {
         comandoAtivar(comando, base);
     } else if(comando.find("EXECUTAR") != string::npos) {
-        // comandoExecutar(comando, base);
+        comandoExecutar(comando, base);
     } else if(comando.find("RELATORIO") != string::npos) {
         comandoRelatorio(comando, base);
     } else if(comando.find("RETORNAR") != string::npos) {
@@ -76,8 +76,6 @@ int Comandos::tipoComando(string comando) {
 
 // Ordens de comando
 void Comandos::comandoMover(string comando, Base &base) {
-    coordenadaX = stoi(comando.substr(comando.find("(")+1,comando.find(",")));
-    coordenadaY = stoi(comando.substr(comando.find(",")+1,comando.find(")")));
     idRobo = stoi(comando.substr(6, 8));
     if (auxPrioritaria) {
         base.adicionarComandoPrioritario(idRobo, comando);
@@ -110,10 +108,10 @@ void Comandos::comandoAtivar(string comando, Base &base) {
     base.ativarRobo(idRobo);
 }
 
-// void Comandos::comandoExecutar(string comando, Base &base) {
-//     idRobo = stoi(comando.substr(9, comando.length()));
-//     base.executarRobo(idRobo);
-// }
+void Comandos::comandoExecutar(string comando, Base &base) {
+    idRobo = stoi(comando.substr(9, comando.length()));
+    base.executarRobo(idRobo);
+}
 
 void Comandos::comandoRelatorio(string comando, Base &base) {
     idRobo = stoi(comando.substr(10, comando.length()));

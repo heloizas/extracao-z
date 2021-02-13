@@ -15,8 +15,8 @@ class Mapa {
         void gerarMapa(ifstream &arquivoMapa);
     public:
         Mapa(ifstream &arquivoMapa);
-        void encontrarPonto(int, int);
-        void imprimirMapa();
+        string encontrarPonto(int, int);
+        void imprimirMapa(); 
         ~Mapa();
         // inline void imprimirComandos() const {comandos->imprimirComandos();}
         // inline void relatorioGeral() const {base->relatorioGeral();}

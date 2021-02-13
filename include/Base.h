@@ -18,7 +18,7 @@ class Base {
         ~Base();
         void adicionarComando(int, string);
         void adicionarComandoPrioritario(int, string);
-        void executarRobo(int);
+        void executarRobo(int); 
         void ativarRobo(int);
         void retornarRobo(int);
         void relatorioRobo(int);

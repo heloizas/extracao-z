@@ -26,9 +26,9 @@ void Base::adicionarComandoPrioritario(int idRobo, string comando) {
   robos->adicionarComandoPrioritario(idRobo, comando); 
 }
 
-// void Base::executarRobo(int idRobo) {
-    
-// }
+void Base::executarRobo(int idRobo) {
+  robos->executarRobo(idRobo, *mapa);
+}
 
 void Base::ativarRobo(int idRobo) {
   if(robos->ativarRobo(idRobo)) {

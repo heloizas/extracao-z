@@ -19,6 +19,7 @@ class Fila {
         static const int MAXTAM = 100;
         string comandos[MAXTAM];
         int tamanho;
+    friend class Robos;
 };
 
 #endif

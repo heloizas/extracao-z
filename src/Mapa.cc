@@ -31,22 +31,23 @@ void Mapa::gerarMapa(ifstream &arquivoMapa) {
 	}
 }
 
-void Mapa::encontrarPonto(int x, int y) {
+string Mapa::encontrarPonto(int x, int y) {
+	string ponto = "";
 	if (x >= linhas || x >= colunas){
-		cout << "O ponto solicitado nao existe no mapa";
+		ponto = "O ponto solicitado nao existe no mapa";
 	} else if (mapaMatriz[x][y] == recurso){
-		cout << "(" << x << "," << y << "): "<< "Recurso";
+		ponto = "Recurso";
 	} else if (mapaMatriz[x][y] == obstaculo){
-		cout << "(" << x << "," << y << "): "<< "Obstáculo";
+		ponto = "Obstaculo";
 	} else if (mapaMatriz[x][y] == inimigo){
-		cout << "(" << x << "," << y << "): "<< "Inimigo";
+		ponto = "Inimigo";
 	} else if (mapaMatriz[x][y] == vazio){
-		cout << "(" << x << "," << y << "): "<< "Vazio";
+		ponto = "Vazio";
 	}
 	else if (mapaMatriz[x][y] == mapaBase){
-		cout << "(" << x << "," << y << "): "<< "Base";
+		ponto = "Base";
 	}
-    cout << endl;
+    return ponto;
 }
 
 void Mapa::imprimirMapa() {

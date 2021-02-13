@@ -9,7 +9,7 @@ using namespace std;
 
 ListaRobos::ListaRobos() {
     for (int i=0; i<50; i++) {
-        robos[i] = new Robos;
+        robos[i] = new Robos(i);
     }
 }
 
@@ -21,10 +21,10 @@ void ListaRobos::adicionarComandoPrioritario(int idRobo, string comando) {
     robos[idRobo]->adicionarComandoPrioritario(comando);  
 }
 
-// void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
-//     robos[idRobo]->executarRobo(mapa);
-// };
-
+void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
+    robos[idRobo]->executarRobo(mapa);
+};
+ 
 bool ListaRobos::ativarRobo(int idRobo) {
     return robos[idRobo]->ativarRobo() ? true : false;
 }

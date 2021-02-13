@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "Robos.h"
+#include "Mapa.h"
 
 #ifndef LISTAROBOS_H
 #define LISTAROBOS_H
@@ -17,7 +18,7 @@ class ListaRobos {
         void adicionarComandoPrioritario(int, string);
 
         // To-do: colocar ID
-        void executarRobo(int);
+        void executarRobo(int, Mapa&);
         bool ativarRobo(int);
         void retornarRobo(int);
         void relatorioRobo(int);

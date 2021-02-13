@@ -14,8 +14,6 @@ class Comandos {
         int quantidadeComandos;
         int tipo;
         int idRobo;
-        int coordenadaX;
-        int coordenadaY;
         bool auxPrioritaria;
         void furaFila();
         int tipoComando(string);
