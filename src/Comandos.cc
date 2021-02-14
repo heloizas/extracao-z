@@ -74,7 +74,7 @@ int Comandos::tipoComando(string comando) {
     return tipo;
 }
 
-// Ordens de comando
+// Ordens de Comando
 void Comandos::comandoMover(string comando, Base &base) {
     idRobo = stoi(comando.substr(6, 8));
     if (auxPrioritaria) {
@@ -102,7 +102,7 @@ void Comandos::comandoEliminar(string comando, Base &base) {
     }
 }
 
-// Ordens diretas:
+// Ordens Diretas:
 void Comandos::comandoAtivar(string comando, Base &base) {
     idRobo = stoi(comando.substr(7, comando.length()));
     base.ativarRobo(idRobo);
@@ -113,15 +113,14 @@ void Comandos::comandoExecutar(string comando, Base &base) {
     base.executarRobo(idRobo);
 }
 
+void Comandos::comandoRelatorio(string comando, Base &base) {
+    idRobo = stoi(comando.substr(10, comando.length()));
+    base.relatorioRobo(idRobo);
+}
 
 void Comandos::comandoRetornar(string comando, Base &base) {
     idRobo = stoi(comando.substr(9, comando.length()));
     base.retornarRobo(idRobo);
-}
-
-void Comandos::comandoRelatorio(string comando, Base &base) {
-    idRobo = stoi(comando.substr(10, comando.length()));
-    base.relatorioRobo(idRobo);
 }
 
 void Comandos::imprimirComandos() {

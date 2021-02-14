@@ -14,10 +14,6 @@ Base::Base(ifstream &arquivoMapa) {
   robos = new ListaRobos;
 }
 
-void Base::relatorioGeral() {
-  cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
-} 
-
 void Base::adicionarComando(int idRobo, string comando) {
   robos->adicionarComando(idRobo, comando); 
 }
@@ -26,28 +22,24 @@ void Base::adicionarComandoPrioritario(int idRobo, string comando) {
   robos->adicionarComandoPrioritario(idRobo, comando); 
 }
 
+void Base::ativarRobo(int idRobo) {
+  if(!robos->roboAtivo(idRobo)) {
+    // Se o robô ainda não estiver ativo, ativa e sai em missão
+    robos->ativarRobo(idRobo);
+    cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
+  } else {
+    cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
+  }
+}
+
 void Base::executarRobo(int idRobo) {
   robos->executarRobo(idRobo, *mapa);
 } 
 
-void Base::ativarRobo(int idRobo) {
-  if(robos->roboAtivo(idRobo)) {
-    // Se for verdade
-    cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
-  } else {
-    robos->ativarRobo(idRobo);
-    cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
-  }
-}
+void Base::relatorioGeral() {
+  cout << "BASE: TOTAL DE ALIENS " << totalAliens << " RECURSOS " << recursosColetados << endl;
+} 
 
-// void Base::ativarRobo(int idRobo) {
-//   if(!robos->ativarRobo(idRobo)) {
-//     cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
-//   } else {
-//   cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
-//   }
-// } 
- 
 void Base::retornarRobo(int idRobo) {
   if(!robos->roboAtivo(idRobo)) {
     cout << "BASE: ROBO " << idRobo << " NAO ESTA EM MISSAO" << endl;

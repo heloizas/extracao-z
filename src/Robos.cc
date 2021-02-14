@@ -22,26 +22,45 @@ bool Robos::roboAtivo(){
     return ativo;
 }
 
+int Robos::qtdRecursos(){
+    return qtdRecursosColetados;
+}
+
+int Robos::qtdInimigos(){
+    return qtdInimigosEliminados;
+}
+
+void Robos::adicionarComando(string comando) { 
+    filaComandos[0]->Enfileira(comando);
+} 
+
+void Robos::adicionarComandoPrioritario(string comando) { 
+    filaComandos[0]->InserePrioritario(comando);
+} 
+
 void Robos::ativarRobo() {
     if (!roboAtivo()){
         ativo = true;
     }
 }
 
-// bool Robos::ativarRobo() {
-//     bool auxAtivo = ativo;
-//     ativo = true;
-//     return auxAtivo;
-// }
+void Robos::imprimirRelatorio() {
+    filaHistorico[0]->Imprime();
+}
+
+void Robos::retornarBase() {
+    ativo = false;
+    posicaoX = 0;
+    posicaoY = 0;
+    qtdInimigosEliminados = 0;
+    qtdRecursosColetados = 0;
+    filaComandos[0]->Limpa();
+    filaHistorico[0]->Limpa();
+}
 
 void Robos::executarRobo(Mapa& mapa) {
     int tamanho = filaComandos[0]->tamanho;
     string comando;
-    // mapa.imprimirMapa();
-
-    // cout << endl;
-    // cout << endl;
-
     for(int i = 0; i < tamanho; i++) {
         comando = filaComandos[0]->Desenfileira();
         processarComando(comando, mapa);
@@ -83,7 +102,6 @@ void Robos::comandoColetar(Mapa& mapa) {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL COLETAR RECURSOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
     filaHistorico[0]->Enfileira(auxHistorico);
-    // mapa.imprimirMapa();
 }
 
 void Robos::comandoEliminar(Mapa& mapa) {
@@ -96,37 +114,6 @@ void Robos::comandoEliminar(Mapa& mapa) {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL ELIMINAR ALIEN EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
     filaHistorico[0]->Enfileira(auxHistorico);
-    // mapa.imprimirMapa();
-}
-
-int Robos::qtdRecursos(){
-    return qtdRecursosColetados;
-}
-
-int Robos::qtdInimigos(){
-    return qtdInimigosEliminados;
-}
-
-void Robos::retornarBase() {
-    ativo = false;
-    posicaoX = 0;
-    posicaoY = 0;
-    qtdInimigosEliminados = 0;
-    qtdRecursosColetados = 0;
-    filaComandos[0]->Limpa();
-    filaHistorico[0]->Limpa();
-}
-
-void Robos::adicionarComando(string comando) { 
-    filaComandos[0]->Enfileira(comando);
-} 
-
-void Robos::adicionarComandoPrioritario(string comando) { 
-    filaComandos[0]->InserePrioritario(comando);
-} 
-
-void Robos::imprimirRelatorio() {
-    filaHistorico[0]->Imprime();
 }
 
 Robos::~Robos() {

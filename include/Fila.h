@@ -6,20 +6,20 @@
 using namespace std;
 
 class Fila {
-    public:
-        Fila();
-        void Enfileira(string);
-        void InserePrioritario(string);
-        string Desenfileira();
-        void Imprime();
-        void Limpa();
-        ~Fila();
     private:
         int frente;
         int tras;
         static const int MAXTAM = 100;
-        string comandos[MAXTAM];
+        string comandos[MAXTAM]; 
         int tamanho;
+    public:
+        Fila();
+        ~Fila();
+        void Enfileira(string);
+        string Desenfileira();
+        void InserePrioritario(string);
+        void Imprime();
+        void Limpa();
     friend class Robos;
 };
 

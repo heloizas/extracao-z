@@ -15,10 +15,10 @@ class Mapa {
         void gerarMapa(ifstream &arquivoMapa);
     public:
         Mapa(ifstream &arquivoMapa);
+        ~Mapa();
         string encontrarPonto(int, int);
         void adicionarPonto(int, int);
         void imprimirMapa(); 
-        ~Mapa();
 };
 
 #endif

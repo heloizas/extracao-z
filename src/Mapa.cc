@@ -13,20 +13,19 @@ Mapa::Mapa(ifstream &arquivoMapa) {
 	vazio = '.';
 	linhas = 0;
 	colunas = 0;
+	//Quantidade de linhas e colunas
 	arquivoMapa >> linhas >> colunas;
 	gerarMapa(arquivoMapa);
 }
 
 void Mapa::gerarMapa(ifstream &arquivoMapa) {
 	if (arquivoMapa.is_open()){
-		// Tamanho do mapa
-		// Preenche o mapa
 		for(int i=0; i<linhas; i++) {
 			for(int j=0; j<colunas; j++) { 
 				arquivoMapa >> mapaMatriz[i][j];
 			}
 		}
-		} else {
+	} else {
 		cout << "Nao foi possivel abrir o arquivo do mapa! Verifique o nome e a localizacao do arquivo." << endl;
 	}
 }

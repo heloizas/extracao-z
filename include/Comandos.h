@@ -13,14 +13,13 @@ class Comandos {
         string linhaComando;
         int quantidadeComandos;
         int tipo;
-        int idRobo;
+        int idRobo; 
         bool auxPrioritaria;
-        void furaFila();
-        int tipoComando(string);
         void gerarComandos(ifstream &arquivoComandos, Base &base);
         void executarComando(string, Base &base);
         void executarComandoDireto(string, Base &base);
         void executarComandoOrdem(string, Base &base, bool);
+        int tipoComando(string);
         void comandoMover(string, Base &base);
         void comandoColetar(string, Base &base);
         void comandoEliminar(string, Base &base);

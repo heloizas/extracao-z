@@ -15,14 +15,13 @@ class Base {
     public:
         Base(ifstream &arquivoMapa);
         ~Base();
-        void relatorioGeral();
         void adicionarComando(int, string);
         void adicionarComandoPrioritario(int, string);
-        void executarRobo(int);
         void ativarRobo(int);
-        // void ativarRobo(int);
-        void retornarRobo(int);
+        void executarRobo(int);
         void relatorioRobo(int);
+        void retornarRobo(int);
+        void relatorioGeral();
     friend class Mapa;
 };
 

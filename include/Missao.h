@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <string>
 #include "Base.h"
 #include "Comandos.h"
-#include "Mapa.h"
 
 #ifndef MISSAO_H
 #define MISSAO_H

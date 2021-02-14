@@ -21,17 +21,21 @@ void ListaRobos::adicionarComandoPrioritario(int idRobo, string comando) {
     robos[idRobo]->adicionarComandoPrioritario(comando);  
 }
 
-void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
-    robos[idRobo]->executarRobo(mapa);
-}
- 
 void ListaRobos::ativarRobo(int idRobo) {
     robos[idRobo]->ativarRobo(); 
 }
 
-// bool ListaRobos::ativarRobo(int idRobo) {
-//     robos[idRobo]->ativarRobo() ? true : false; 
-// }
+void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
+    robos[idRobo]->executarRobo(mapa);
+}
+
+void ListaRobos::relatorioRobo(int idRobo) {
+    robos[idRobo]->imprimirRelatorio();
+};
+
+void ListaRobos::retornarRobo(int idRobo) {
+    robos[idRobo]->retornarBase();
+};
 
 bool ListaRobos::roboAtivo(int idRobo) {
     return robos[idRobo]->roboAtivo();
@@ -44,15 +48,6 @@ int ListaRobos::qtdRecursos(int idRobo) {
 int ListaRobos::qtdInimigos(int idRobo) {
     return robos[idRobo]->qtdInimigos();
 }
-
-void ListaRobos::retornarRobo(int idRobo) {
-    robos[idRobo]->retornarBase();
-};
-
-
-void ListaRobos::relatorioRobo(int idRobo) {
-    robos[idRobo]->imprimirRelatorio();
-};
 
 ListaRobos::~ListaRobos() {
 

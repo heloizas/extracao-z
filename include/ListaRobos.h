@@ -16,17 +16,13 @@ class ListaRobos {
         ~ListaRobos(); 
         void adicionarComando(int, string);
         void adicionarComandoPrioritario(int, string);
-
-        // To-do: colocar ID
-        void executarRobo(int, Mapa&);
         void ativarRobo(int);
-        // bool ativarRobo(int);
-        bool roboAtivo(int); 
-        void retornarRobo(int);
+        void executarRobo(int, Mapa&);
         void relatorioRobo(int);
+        void retornarRobo(int);
+        bool roboAtivo(int); 
         int qtdRecursos(int);
         int qtdInimigos(int);
-        // void imprimirRelatorio();
 };
 
 #endif
