@@ -11,13 +11,13 @@ Fila::Fila(){
     tamanho = 0;
 }
 
-void Fila::Enfileira(string comando) {
+void Fila::enfileira(string comando) {
     comandos[tras] = comando;
     tras = (tras + 1) % MAXTAM;
     tamanho++;
 }
 
-string Fila::Desenfileira() {
+string Fila::desenfileira() {
     string contadorAux;
     contadorAux = comandos[frente];
     frente = (frente + 1) % MAXTAM;
@@ -25,7 +25,7 @@ string Fila::Desenfileira() {
     return contadorAux;
 }
 
-void Fila::InserePrioritario(string comando) {
+void Fila::inserePrioritario(string comando) {
     Fila filaAuxiliar;
     string auxX;
     string auxY;
@@ -33,25 +33,25 @@ void Fila::InserePrioritario(string comando) {
     contadorAux = tamanho;
     int tamanhoFilaAux = 0;
     while (tamanhoFilaAux < contadorAux) {
-        auxX = Desenfileira();
-        filaAuxiliar.Enfileira(auxX);
+        auxX = desenfileira();
+        filaAuxiliar.enfileira(auxX);
         tamanhoFilaAux++;
     }
-    Enfileira(comando);
+    enfileira(comando);
     while (tamanhoFilaAux > 0) {
-        auxY = filaAuxiliar.Desenfileira();
-        Enfileira(auxY);
+        auxY = filaAuxiliar.desenfileira();
+        enfileira(auxY);
         tamanhoFilaAux--;
     }
 }
 
-void Fila::Imprime() {
+void Fila::imprime() {
     for (int i = 0; i<tamanho; i++) {
         cout << comandos[i] << endl;
     }
 }
 
-void Fila::Limpa() {
+void Fila::limpa() {
     frente = 0;
     tras = 0;
     tamanho = 0;

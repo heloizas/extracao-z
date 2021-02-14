@@ -15,11 +15,11 @@ class Fila {
     public:
         Fila();
         ~Fila();
-        void Enfileira(string);
-        string Desenfileira();
-        void InserePrioritario(string);
-        void Imprime();
-        void Limpa();
+        void enfileira(string);
+        string desenfileira();
+        void inserePrioritario(string);
+        void imprime();
+        void limpa();
     friend class Robos;
 };
 

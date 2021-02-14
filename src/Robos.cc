@@ -31,11 +31,11 @@ int Robos::qtdInimigos(){
 }
 
 void Robos::adicionarComando(string comando) { 
-    filaComandos[0]->Enfileira(comando);
+    filaComandos[0]->enfileira(comando);
 } 
 
 void Robos::adicionarComandoPrioritario(string comando) { 
-    filaComandos[0]->InserePrioritario(comando);
+    filaComandos[0]->inserePrioritario(comando);
 } 
 
 void Robos::ativarRobo() {
@@ -45,7 +45,7 @@ void Robos::ativarRobo() {
 }
 
 void Robos::imprimirRelatorio() {
-    filaHistorico[0]->Imprime();
+    filaHistorico[0]->imprime();
 }
 
 void Robos::retornarBase() {
@@ -54,15 +54,15 @@ void Robos::retornarBase() {
     posicaoY = 0;
     qtdInimigosEliminados = 0;
     qtdRecursosColetados = 0;
-    filaComandos[0]->Limpa();
-    filaHistorico[0]->Limpa();
+    filaComandos[0]->limpa();
+    filaHistorico[0]->limpa();
 }
 
 void Robos::executarRobo(Mapa& mapa) {
     int tamanho = filaComandos[0]->tamanho;
     string comando;
     for(int i = 0; i < tamanho; i++) {
-        comando = filaComandos[0]->Desenfileira();
+        comando = filaComandos[0]->desenfileira();
         processarComando(comando, mapa);
     }
 } 
@@ -89,7 +89,7 @@ void Robos::comandoMover(string comando, Mapa& mapa) {
     else {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL MOVER PARA ("+to_string(coordenadaX)+","+to_string(coordenadaY)+")";
     }
-    filaHistorico[0]->Enfileira(auxHistorico);
+    filaHistorico[0]->enfileira(auxHistorico);
 }
 
 void Robos::comandoColetar(Mapa& mapa) {
@@ -101,7 +101,7 @@ void Robos::comandoColetar(Mapa& mapa) {
     else {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL COLETAR RECURSOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
-    filaHistorico[0]->Enfileira(auxHistorico);
+    filaHistorico[0]->enfileira(auxHistorico);
 }
 
 void Robos::comandoEliminar(Mapa& mapa) {
@@ -113,7 +113,7 @@ void Robos::comandoEliminar(Mapa& mapa) {
     else {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL ELIMINAR ALIEN EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
-    filaHistorico[0]->Enfileira(auxHistorico);
+    filaHistorico[0]->enfileira(auxHistorico);
 }
 
 Robos::~Robos() {
