@@ -8,12 +8,12 @@ using namespace std;
 
 Robos::Robos(int id) {
     idRobo = id;
-    ativo: false;
-    posicaoX: 0;
-    posicaoY: 0;
-    qtdInimigosEliminados: 0;
-    qtdRecursosColetados: 0;
-    auxHistorico: " ";
+    ativo = false;
+    posicaoX = 0;
+    posicaoY = 0;
+    qtdInimigosEliminados = 0;
+    qtdRecursosColetados = 0;
+    auxHistorico = " ";
     filaComandos[0] = new Fila;
     filaHistorico[0] = new Fila;
 }
@@ -111,12 +111,10 @@ void Robos::retornarBase() {
     ativo = false;
     posicaoX = 0;
     posicaoY = 0;
-    qtdInimigosEliminados: 0;
-    qtdRecursosColetados: 0;
-    int tamanho = filaComandos[0]->tamanho;
-    for(int i=0; i < tamanho; i++) {
-        filaComandos[0]->Desenfileira();
-    }
+    qtdInimigosEliminados = 0;
+    qtdRecursosColetados = 0;
+    filaComandos[0]->Limpa();
+    filaHistorico[0]->Limpa();
 }
 
 void Robos::adicionarComando(string comando) { 

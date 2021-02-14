@@ -9,8 +9,8 @@ using namespace std;
 
 Base::Base(ifstream &arquivoMapa) {
   mapa = new Mapa(arquivoMapa);
-  totalAliens: 0;
-  recursosColetados: 0; 
+  totalAliens = 0;
+  recursosColetados = 0; 
   robos = new ListaRobos;
 }
 
@@ -52,14 +52,14 @@ void Base::retornarRobo(int idRobo) {
   if(!robos->roboAtivo(idRobo)) {
     cout << "BASE: ROBO " << idRobo << " NAO ESTA EM MISSAO" << endl;
   } else {
-    robos->retornarRobo(idRobo);
     int auxInimigos = robos->qtdInimigos(idRobo);
     int auxRecursos = robos->qtdRecursos(idRobo);
+    robos->retornarRobo(idRobo);
     cout << "BASE: ROBO " << idRobo << " RETORNOU ALIENS " << auxInimigos << " RECURSOS " << auxRecursos << endl;
     totalAliens = totalAliens+auxInimigos;
     recursosColetados = recursosColetados+auxRecursos; 
   } 
-}
+} 
 
 void Base::relatorioRobo(int idRobo) {
   robos->relatorioRobo(idRobo); 

@@ -12,6 +12,7 @@ class Fila {
         void InserePrioritario(string);
         string Desenfileira();
         void Imprime();
+        void Limpa();
         ~Fila();
     private:
         int frente;

@@ -51,6 +51,11 @@ void Fila::Imprime() {
     }
 }
 
-Fila::~Fila() {
+void Fila::Limpa() {
     frente = 0;
+    tras = 0;
+    tamanho = 0;
+}
+
+Fila::~Fila() {
 }

@@ -33,7 +33,7 @@ void Mapa::gerarMapa(ifstream &arquivoMapa) {
 
 string Mapa::encontrarPonto(int x, int y) {
 	string ponto = "";
-	if (x >= linhas || x >= colunas){
+	if (x > linhas || y > colunas){
 		ponto = "O ponto solicitado nao existe no mapa";
 	} else if (mapaMatriz[x][y] == recurso){
 		ponto = "Recurso";
