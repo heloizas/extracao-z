@@ -23,11 +23,15 @@ void ListaRobos::adicionarComandoPrioritario(int idRobo, string comando) {
 
 void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
     robos[idRobo]->executarRobo(mapa);
-}; 
- 
-bool ListaRobos::ativarRobo(int idRobo) {
-    robos[idRobo]->ativarRobo() ? true : false; 
 }
+ 
+void ListaRobos::ativarRobo(int idRobo) {
+    robos[idRobo]->ativarRobo(); 
+}
+
+// bool ListaRobos::ativarRobo(int idRobo) {
+//     robos[idRobo]->ativarRobo() ? true : false; 
+// }
 
 bool ListaRobos::roboAtivo(int idRobo) {
     return robos[idRobo]->roboAtivo();

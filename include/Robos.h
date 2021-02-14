@@ -23,7 +23,8 @@ class Robos {
         ~Robos();
         void adicionarComando(string);
         void adicionarComandoPrioritario(string);
-        bool ativarRobo();
+        void ativarRobo();
+        // bool ativarRobo();
         void comandoMover(string, Mapa& mapa);
         void comandoColetar(Mapa& mapa);
         void comandoEliminar(Mapa& mapa);

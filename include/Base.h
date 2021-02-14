@@ -20,6 +20,7 @@ class Base {
         void adicionarComandoPrioritario(int, string);
         void executarRobo(int);
         void ativarRobo(int);
+        // void ativarRobo(int);
         void retornarRobo(int);
         void relatorioRobo(int);
     friend class Mapa;

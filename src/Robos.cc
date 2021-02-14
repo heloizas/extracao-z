@@ -22,11 +22,17 @@ bool Robos::roboAtivo(){
     return ativo;
 }
 
-bool Robos::ativarRobo() {
-    bool auxAtivo = ativo;
-    ativo = true;
-    return auxAtivo;
+void Robos::ativarRobo() {
+    if (!roboAtivo()){
+        ativo = true;
+    }
 }
+
+// bool Robos::ativarRobo() {
+//     bool auxAtivo = ativo;
+//     ativo = true;
+//     return auxAtivo;
+// }
 
 void Robos::executarRobo(Mapa& mapa) {
     int tamanho = filaComandos[0]->tamanho;

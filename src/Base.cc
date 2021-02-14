@@ -31,23 +31,33 @@ void Base::executarRobo(int idRobo) {
 } 
 
 void Base::ativarRobo(int idRobo) {
-  if(robos->ativarRobo(idRobo)) {
+  if(robos->roboAtivo(idRobo)) {
+    // Se for verdade
     cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
   } else {
-  cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
+    robos->ativarRobo(idRobo);
+    cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
   }
-} 
+}
+
+// void Base::ativarRobo(int idRobo) {
+//   if(!robos->ativarRobo(idRobo)) {
+//     cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
+//   } else {
+//   cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
+//   }
+// } 
  
 void Base::retornarRobo(int idRobo) {
   if(!robos->roboAtivo(idRobo)) {
     cout << "BASE: ROBO " << idRobo << " NAO ESTA EM MISSAO" << endl;
   } else {
+    robos->retornarRobo(idRobo);
     int auxInimigos = robos->qtdInimigos(idRobo);
     int auxRecursos = robos->qtdRecursos(idRobo);
-    robos->retornarRobo(idRobo);
     cout << "BASE: ROBO " << idRobo << " RETORNOU ALIENS " << auxInimigos << " RECURSOS " << auxRecursos << endl;
     totalAliens = totalAliens+auxInimigos;
-    recursosColetados = recursosColetados+auxRecursos;
+    recursosColetados = recursosColetados+auxRecursos; 
   } 
 }
 
