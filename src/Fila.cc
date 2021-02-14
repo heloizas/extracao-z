@@ -12,8 +12,7 @@ Fila::Fila(){
 }
 
 void Fila::Enfileira(string comando) {
-    int auxTamanho = tamanho;
-    comandos[auxTamanho] = comando;
+    comandos[tras] = comando;
     tras = (tras + 1) % MAXTAM;
     tamanho++;
 }
@@ -27,7 +26,6 @@ string Fila::Desenfileira() {
 }
 
 void Fila::InserePrioritario(string comando) {
-    frente = 0;
     Fila filaAuxiliar;
     string auxX;
     string auxY;
@@ -54,5 +52,5 @@ void Fila::Imprime() {
 }
 
 Fila::~Fila() {
-
+    frente = 0;
 }

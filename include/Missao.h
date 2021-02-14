@@ -16,6 +16,7 @@ class Missao {
     public:
         Missao(ifstream &arquivoMapa, ifstream &arquivoComandos);
         ~Missao();
+        inline void relatorioGeral() const {base->relatorioGeral();}
 };
 
 #endif

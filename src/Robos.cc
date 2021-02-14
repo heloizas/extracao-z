@@ -23,18 +23,18 @@ bool Robos::roboAtivo(){
 }
 
 bool Robos::ativarRobo() {
-    bool estaAtivo = roboAtivo();
+    bool auxAtivo = ativo;
     ativo = true;
-    return estaAtivo;
+    return auxAtivo;
 }
 
 void Robos::executarRobo(Mapa& mapa) {
     int tamanho = filaComandos[0]->tamanho;
     string comando;
-    mapa.imprimirMapa();
+    // mapa.imprimirMapa();
 
-    cout << endl;
-    cout << endl;
+    // cout << endl;
+    // cout << endl;
 
     for(int i = 0; i < tamanho; i++) {
         comando = filaComandos[0]->Desenfileira();
@@ -77,8 +77,7 @@ void Robos::comandoColetar(Mapa& mapa) {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL COLETAR RECURSOS EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
     filaHistorico[0]->Enfileira(auxHistorico);
-    mapa.imprimirMapa();
-
+    // mapa.imprimirMapa();
 }
 
 void Robos::comandoEliminar(Mapa& mapa) {
@@ -91,7 +90,7 @@ void Robos::comandoEliminar(Mapa& mapa) {
         auxHistorico = "ROBO "+to_string(idRobo)+": IMPOSSIVEL ELIMINAR ALIEN EM ("+to_string(this->posicaoX)+","+to_string(this->posicaoY)+")";
     }
     filaHistorico[0]->Enfileira(auxHistorico);
-    mapa.imprimirMapa();
+    // mapa.imprimirMapa();
 }
 
 int Robos::qtdRecursos(){

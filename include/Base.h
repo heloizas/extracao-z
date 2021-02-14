@@ -12,10 +12,10 @@ class Base {
         Mapa* mapa;
         ListaRobos* robos; 
         int totalAliens, recursosColetados;
-        void relatorioGeral();
     public:
         Base(ifstream &arquivoMapa);
         ~Base();
+        void relatorioGeral();
         void adicionarComando(int, string);
         void adicionarComandoPrioritario(int, string);
         void executarRobo(int);

@@ -28,16 +28,16 @@ void Base::adicionarComandoPrioritario(int idRobo, string comando) {
 
 void Base::executarRobo(int idRobo) {
   robos->executarRobo(idRobo, *mapa);
-}
+} 
 
 void Base::ativarRobo(int idRobo) {
   if(robos->ativarRobo(idRobo)) {
     cout << "BASE: ROBO " << idRobo << " JA ESTA EM MISSAO" << endl;
-    return;
-  }
+  } else {
   cout << "BASE: ROBO "<< idRobo <<" SAIU EM MISSAO" << endl;
+  }
 } 
-
+ 
 void Base::retornarRobo(int idRobo) {
   if(!robos->roboAtivo(idRobo)) {
     cout << "BASE: ROBO " << idRobo << " NAO ESTA EM MISSAO" << endl;

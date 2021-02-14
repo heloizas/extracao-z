@@ -15,19 +15,11 @@ int main(int argc, char* argv[]) {
     ifstream arquivoComandos(argv[2]);
 
     Missao missao(arquivoMapa, arquivoComandos);
-    // mapa.imprimirRelatorio();
-    // mapa.imprimirMapa();
-
-    // cout << endl;
-    // mapa.encontrarPonto(9,9); 
-    // cout << endl;
-
-    // mapa.imprimirComandos(); 
-    // cout << endl;
+    missao.relatorioGeral();
 
     // Fila
     // Fila FTeste;
-    // string comando[6];
+    // string comando[7];
     // comando[0] = "Primeiro"; 
     // comando[1] = "Segundo";
     // comando[2] = "Terceiro";
@@ -42,6 +34,9 @@ int main(int argc, char* argv[]) {
 
     // comando[5] = "**2Prioritario";
     // FTeste.InserePrioritario(comando[5]);
+
+    // comando[6] = "***3Prioritario";
+    // FTeste.InserePrioritario(comando[6]);
     // FTeste.Imprime();
 
     return 0;

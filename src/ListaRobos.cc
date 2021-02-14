@@ -23,10 +23,10 @@ void ListaRobos::adicionarComandoPrioritario(int idRobo, string comando) {
 
 void ListaRobos::executarRobo(int idRobo, Mapa& mapa) {
     robos[idRobo]->executarRobo(mapa);
-};
+}; 
  
 bool ListaRobos::ativarRobo(int idRobo) {
-    return robos[idRobo]->ativarRobo() ? true : false;
+    robos[idRobo]->ativarRobo() ? true : false; 
 }
 
 bool ListaRobos::roboAtivo(int idRobo) {
@@ -38,7 +38,7 @@ int ListaRobos::qtdRecursos(int idRobo) {
 }
 
 int ListaRobos::qtdInimigos(int idRobo) {
-    return robos[idRobo]->qtdRecursos();
+    return robos[idRobo]->qtdInimigos();
 }
 
 void ListaRobos::retornarRobo(int idRobo) {
