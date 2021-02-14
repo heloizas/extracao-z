@@ -13,40 +13,44 @@ Mapa::Mapa(ifstream &arquivoMapa) {
 	vazio = '.';
 	linhas = 0;
 	colunas = 0;
-
-	base = new Base;
+	//Quantidade de linhas e colunas
+	arquivoMapa >> linhas >> colunas;
 	gerarMapa(arquivoMapa);
 }
 
 void Mapa::gerarMapa(ifstream &arquivoMapa) {
 	if (arquivoMapa.is_open()){
-		arquivoMapa >> linhas >> colunas;
 		for(int i=0; i<linhas; i++) {
 			for(int j=0; j<colunas; j++) { 
 				arquivoMapa >> mapaMatriz[i][j];
 			}
 		}
-		} else {
-		cout << "ERRO: Nao foi possivel abrir o arquivo do mapa!" << endl;
+	} else {
+		cout << "Nao foi possivel abrir o arquivo do mapa! Verifique o nome e a localizacao do arquivo." << endl;
 	}
 }
 
-void Mapa::encontrarPonto(int x, int y) {
-	if (x >= linhas || x >= colunas){
-		cout << "O ponto solicitado nao existe no mapa";
+string Mapa::encontrarPonto(int x, int y) {
+	string ponto = "";
+	if (x > linhas || y > colunas){
+		ponto = "O ponto solicitado nao existe no mapa";
 	} else if (mapaMatriz[x][y] == recurso){
-		cout << "(" << x << "," << y << "): "<< "Recurso";
+		ponto = "Recurso";
 	} else if (mapaMatriz[x][y] == obstaculo){
-		cout << "(" << x << "," << y << "): "<< "Obstáculo";
+		ponto = "Obstaculo";
 	} else if (mapaMatriz[x][y] == inimigo){
-		cout << "(" << x << "," << y << "): "<< "Inimigo";
+		ponto = "Inimigo";
 	} else if (mapaMatriz[x][y] == vazio){
-		cout << "(" << x << "," << y << "): "<< "Vazio";
+		ponto = "Vazio";
 	}
 	else if (mapaMatriz[x][y] == mapaBase){
-		cout << "(" << x << "," << y << "): "<< "Base";
+		ponto = "Base";
 	}
-    cout << endl;
+    return ponto;
+}
+
+void Mapa::adicionarPonto(int x, int y) {
+	mapaMatriz[x][y] = '.';
 }
 
 void Mapa::imprimirMapa() {

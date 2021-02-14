@@ -1,18 +1,13 @@
 #include <stdio.h>
 #include <string>
-#include "Base.h"
-#include "Comandos.h"
 
 #ifndef MAPA_H
 #define MAPA_H
 
 using namespace std;
 
- 
 class Mapa {
     private:
-        Base* base;
-        Comandos* comandos;
         char mapaBase, recurso, obstaculo, inimigo, vazio;
         int linhas, colunas;
         static const int MAXTAM = 100;
@@ -20,10 +15,10 @@ class Mapa {
         void gerarMapa(ifstream &arquivoMapa);
     public:
         Mapa(ifstream &arquivoMapa);
-        void encontrarPonto(int, int);
-        void imprimirMapa();
         ~Mapa();
-        inline void relatorioGeral() const {base->relatorioGeral();}
+        string encontrarPonto(int, int);
+        void adicionarPonto(int, int);
+        void imprimirMapa(); 
 };
 
 #endif
